@@ -12,6 +12,9 @@
 		C249FA3421C7F7DB00240F6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C249FA3221C7F7DB00240F6F /* Main.storyboard */; };
 		C249FA3621C7F7DD00240F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C249FA3521C7F7DD00240F6F /* Assets.xcassets */; };
 		C249FA3921C7F7DD00240F6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C249FA3721C7F7DD00240F6F /* LaunchScreen.storyboard */; };
+		C249FA4121C7F80F00240F6F /* Entrants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA4021C7F80F00240F6F /* Entrants.swift */; };
+		C249FA4321C7F82A00240F6F /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA4221C7F82A00240F6F /* Error.swift */; };
+		C249FA4521C7F83700240F6F /* Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA4421C7F83700240F6F /* Swipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		C249FA3521C7F7DD00240F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C249FA3821C7F7DD00240F6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C249FA3A21C7F7DD00240F6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C249FA4021C7F80F00240F6F /* Entrants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrants.swift; sourceTree = "<group>"; };
+		C249FA4221C7F82A00240F6F /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		C249FA4421C7F83700240F6F /* Swipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				C249FA3521C7F7DD00240F6F /* Assets.xcassets */,
 				C249FA3721C7F7DD00240F6F /* LaunchScreen.storyboard */,
 				C249FA3A21C7F7DD00240F6F /* Info.plist */,
+				C249FA4021C7F80F00240F6F /* Entrants.swift */,
+				C249FA4221C7F82A00240F6F /* Error.swift */,
+				C249FA4421C7F83700240F6F /* Swipe.swift */,
 			);
 			path = "AmusementParkGenerator-Part1";
 			sourceTree = "<group>";
@@ -135,7 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C249FA4321C7F82A00240F6F /* Error.swift in Sources */,
 				C249FA3121C7F7DB00240F6F /* ViewController.swift in Sources */,
+				C249FA4521C7F83700240F6F /* Swipe.swift in Sources */,
+				C249FA4121C7F80F00240F6F /* Entrants.swift in Sources */,
 				C249FA2F21C7F7DB00240F6F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
