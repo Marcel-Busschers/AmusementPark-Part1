@@ -14,3 +14,19 @@ enum AmusementParkError: Error {
     case MissingFullAddress
     case NotAChild
 }
+
+extension HourlyEmployee {
+    // MARK: Handle errors in this extension
+    // - Missing full name
+    // - Missing full address
+}
+
+extension ChildGuest {
+    // MARK: Handle error in this extension
+    // - Not a child
+}
+
+extension DateOfBirth {
+    // MARK: Revert code from Entrants.swift for error handling
+    // - Missing Birthday
+}
