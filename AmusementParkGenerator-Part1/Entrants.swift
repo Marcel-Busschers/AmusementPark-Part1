@@ -6,6 +6,7 @@
 //  Copyright © 2018 Marcel Busschers. All rights reserved.
 //
 
+
 import Foundation
 
 // MARK: Access Case Enums
