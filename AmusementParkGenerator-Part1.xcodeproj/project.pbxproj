@@ -15,6 +15,7 @@
 		C249FA4121C7F80F00240F6F /* Entrants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA4021C7F80F00240F6F /* Entrants.swift */; };
 		C249FA4321C7F82A00240F6F /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA4221C7F82A00240F6F /* Error.swift */; };
 		C249FA4521C7F83700240F6F /* Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA4421C7F83700240F6F /* Swipe.swift */; };
+		C2555F5F21C92EBE003D4611 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2555F5E21C92EBE003D4611 /* Protocols.swift */; };
 		C258AD4621C86AF80054E306 /* AmusementParkGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258AD4521C86AF80054E306 /* AmusementParkGeneratorTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		C249FA4021C7F80F00240F6F /* Entrants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrants.swift; sourceTree = "<group>"; };
 		C249FA4221C7F82A00240F6F /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		C249FA4421C7F83700240F6F /* Swipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swipe.swift; sourceTree = "<group>"; };
+		C2555F5E21C92EBE003D4611 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		C258AD4321C86AF80054E306 /* AmusementParkGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmusementParkGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C258AD4521C86AF80054E306 /* AmusementParkGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmusementParkGeneratorTests.swift; sourceTree = "<group>"; };
 		C258AD4721C86AF80054E306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				C249FA3721C7F7DD00240F6F /* LaunchScreen.storyboard */,
 				C249FA3A21C7F7DD00240F6F /* Info.plist */,
 				C249FA4021C7F80F00240F6F /* Entrants.swift */,
+				C2555F5E21C92EBE003D4611 /* Protocols.swift */,
 				C249FA4221C7F82A00240F6F /* Error.swift */,
 				C249FA4421C7F83700240F6F /* Swipe.swift */,
 			);
@@ -209,6 +212,7 @@
 				C249FA4321C7F82A00240F6F /* Error.swift in Sources */,
 				C249FA3121C7F7DB00240F6F /* ViewController.swift in Sources */,
 				C249FA4521C7F83700240F6F /* Swipe.swift in Sources */,
+				C2555F5F21C92EBE003D4611 /* Protocols.swift in Sources */,
 				C249FA4121C7F80F00240F6F /* Entrants.swift in Sources */,
 				C249FA2F21C7F7DB00240F6F /* AppDelegate.swift in Sources */,
 			);

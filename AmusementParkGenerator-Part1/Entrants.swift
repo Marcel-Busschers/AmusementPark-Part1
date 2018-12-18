@@ -38,7 +38,7 @@ enum DiscountAccess: String {
     case Merchandise = "% discount on merchandise"
 }
 
-// MARK: Structs
+// MARK: Structs for Discount type and DateOfBirth
 
 struct Discount {
     let typeOfDiscount: DiscountAccess
@@ -46,51 +46,33 @@ struct Discount {
 }
 
 struct DateOfBirth {
-    let date: Date
+    let date: Date?
     
     /// Creates a date that takes in Int Values
-    init(day: Int, month: Int, year: Int) throws {
+    init(day: Int?, month: Int?, year: Int?) throws {
         var dateComponent = DateComponents()
         
         dateComponent.year = year
         dateComponent.month = month
         dateComponent.day = day
         
-        if let date = Calendar.current.date(from: dateComponent) {
-            self.date = date
-        } else {
-            throw AmusementParkError.MissingBirthday
-        }
+        self.date = Calendar.current.date(from: dateComponent)
     }
     
     /// Creates a date in format of a string MM/DD/YYYY
     init(_ stringDate: String) throws {
         let splitStringDate = stringDate.split(separator: "/")
         
-        if let month = Int(splitStringDate[0]), let day = Int(splitStringDate[1]), let year = Int(splitStringDate[2]) {
-            try self.init(day: day, month: month, year: year)
-        } else {
-            throw AmusementParkError.MissingBirthday
-        }
+        let month = Int(splitStringDate[0])
+        let day = Int(splitStringDate[1])
+        let year = Int(splitStringDate[2])
         
-        
+        try self.init(day: day, month: month, year: year)
     }
 }
 
-// MARK: Protocols
-
-protocol HasAccess {
-    var areaAccess: [AreaAccess] { get }
-    var rideAccess: [RideAccess] { get }
-    var discountAccess: [Discount]? { get }
-}
-
-protocol Child {
-    func isChild() -> Bool
-}
-
 // MARK: Entrant Classes
-
+/// Super Class entrant
 class Entrant: HasAccess {
     var typeOfEntrant: TypeOfEntrant?
     
@@ -141,6 +123,8 @@ class Entrant: HasAccess {
     
 }
 
+// MARK: Guest Entrants - Sub Classes
+
 class ClassicGuest: Entrant {
     
     init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, dateOfBirth: DateOfBirth?) {
@@ -163,8 +147,8 @@ class ChildGuest: Entrant, Child {
         let pastDate = Calendar.current.date(byAdding: dateComponent, to: Date())
         
         //Unwrapping date to compare
-        if let pDate = pastDate, let DOB = dateOfBirth {
-            if DOB.date > pDate {
+        if let pDate = pastDate, let dateStruct = dateOfBirth, let DOB = dateStruct.date {
+            if DOB > pDate {
                 return true
             }
         }
@@ -182,6 +166,8 @@ class VipGuest: Entrant {
     }
 }
 
+// MARK: Employee Super class - Subclass of Entrant
+
 class HourlyEmployee: Entrant {
     
     init(firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: String, dateOfBirth: DateOfBirth?) {
@@ -192,6 +178,8 @@ class HourlyEmployee: Entrant {
         super.init(typeOfEntrant: nil, areaAccess: [.AmusementAreas], rideAccess: [.AllRides], discountAccess: [foodDiscount, merchandiseDiscount], firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, dateOfBirth: dateOfBirth)
     }
 }
+
+// MARK: Sub Classes of all Employees
 
 class FoodServiceEmployee: HourlyEmployee {
     override init(firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: String, dateOfBirth: DateOfBirth?) {
@@ -219,6 +207,8 @@ class MaintenanceEmployee: HourlyEmployee {
         self.areaAccess = [.AmusementAreas, .KitchenAreas, .RideControlAreas, .MaintenanceAreas]
     }
 }
+
+// Manager Class, sub class of Entrant
 
 class Manager: Entrant {
     init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, dateOfBirth: DateOfBirth?) {

@@ -16,7 +16,6 @@ enum AmusementParkError: Error {
 }
 
 extension HourlyEmployee {
-    // MARK: Handle errors in this extension
     // - Missing full name
     // - Missing full address
     
@@ -48,11 +47,32 @@ extension HourlyEmployee {
 }
 
 extension ChildGuest {
-    // MARK: Handle error in this extension
-    // - Not a child
-}
-
-extension DateOfBirth {
-    // MARK: Revert code from Entrants.swift for error handling
     // - Missing Birthday
+    // - Not a child
+    
+    // Helper method to throw errors
+    func checkErrors(for entrant: ChildGuest) throws {
+        guard let dateOfBirth = entrant.dateOfBirth, let _ = dateOfBirth.date else {
+            throw AmusementParkError.MissingBirthday
+        }
+        if !entrant.isChild() {
+            throw AmusementParkError.NotAChild
+        }
+    }
+    
+    func isErrorFree(for entrant: ChildGuest) -> Bool {
+        do {
+            try checkErrors(for: entrant)
+        } catch AmusementParkError.MissingBirthday {
+            print("You need to enter a the child's birtday")
+            return false
+        } catch AmusementParkError.NotAChild {
+            print("")
+            return false
+        } catch let error {
+            print("\(error)")
+            return false
+        }
+        return true
+    }
 }
