@@ -14,6 +14,7 @@ func SwipeAreaAccess(for pass: Pass, testing typeArea: AreaAccess) -> Bool {
         return false
     }
     if entrant.areaAccess.contains(typeArea) {
+        checkBirthday(from: pass)
         return true
     }
     return false
@@ -25,6 +26,7 @@ func SwipeRideAccess(for pass: Pass) -> Bool {
         return false
     }
     if entrant.rideAccess.contains(.AllRides) {
+        checkBirthday(from: pass)
         return true
     }
     return false
@@ -42,9 +44,20 @@ func SwipeDiscountAccess(for pass: Pass, testing typeDiscount: DiscountAccess) -
     //Compares types
     for discountType in discountArray {
         if discountType.typeOfDiscount == typeDiscount {
+            checkBirthday(from: pass)
             return true
         }
     }
     
     return false
+}
+
+// Function to check if today is the birthday of the passed in Pass
+func checkBirthday(from pass: Pass) {
+    if let entrant = pass.entrant, let dateOfBirth = entrant.dateOfBirth, let DOB = dateOfBirth.date {
+        let currentDate = Date()
+        if currentDate == DOB {
+            print("Happy Birthday! Enjoy your day!")
+        }
+    }
 }
