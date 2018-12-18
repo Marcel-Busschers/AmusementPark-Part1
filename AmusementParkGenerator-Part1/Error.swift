@@ -19,6 +19,32 @@ extension HourlyEmployee {
     // MARK: Handle errors in this extension
     // - Missing full name
     // - Missing full address
+    
+    //Helper method to throw errors
+    func checkErrors(for entrant: Entrant) throws {
+        if entrant.firstName == "" || entrant.lastName == "" {
+            throw AmusementParkError.MissingFullName
+        }
+        if entrant.streetAddress == "" || entrant.city == "" || entrant.state == "" || entrant.zipCode == "" {
+            throw AmusementParkError.MissingFullAddress
+        }
+    }
+    
+    func isErrorFree(for entrant: Entrant) -> Bool {
+        do {
+            try checkErrors(for: entrant)
+        } catch AmusementParkError.MissingFullName {
+            print("Missing full name")
+            return false
+        } catch AmusementParkError.MissingFullAddress {
+            print("Missing full address, please enter all details within address")
+            return false
+        } catch let error {
+            print("\(error)")
+            return false
+        }
+        return true
+    }
 }
 
 extension ChildGuest {

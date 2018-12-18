@@ -15,7 +15,18 @@
 		C249FA4121C7F80F00240F6F /* Entrants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA4021C7F80F00240F6F /* Entrants.swift */; };
 		C249FA4321C7F82A00240F6F /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA4221C7F82A00240F6F /* Error.swift */; };
 		C249FA4521C7F83700240F6F /* Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA4421C7F83700240F6F /* Swipe.swift */; };
+		C258AD4621C86AF80054E306 /* AmusementParkGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258AD4521C86AF80054E306 /* AmusementParkGeneratorTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C258AD4821C86AF80054E306 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C249FA2321C7F7DB00240F6F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C249FA2A21C7F7DB00240F6F;
+			remoteInfo = "AmusementParkGenerator-Part1";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C249FA2B21C7F7DB00240F6F /* AmusementParkGenerator-Part1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AmusementParkGenerator-Part1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,10 +39,20 @@
 		C249FA4021C7F80F00240F6F /* Entrants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entrants.swift; sourceTree = "<group>"; };
 		C249FA4221C7F82A00240F6F /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		C249FA4421C7F83700240F6F /* Swipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swipe.swift; sourceTree = "<group>"; };
+		C258AD4321C86AF80054E306 /* AmusementParkGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmusementParkGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C258AD4521C86AF80054E306 /* AmusementParkGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmusementParkGeneratorTests.swift; sourceTree = "<group>"; };
+		C258AD4721C86AF80054E306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C249FA2821C7F7DB00240F6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C258AD4021C86AF80054E306 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				C249FA2D21C7F7DB00240F6F /* AmusementParkGenerator-Part1 */,
+				C258AD4421C86AF80054E306 /* AmusementParkGeneratorTests */,
 				C249FA2C21C7F7DB00240F6F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				C249FA2B21C7F7DB00240F6F /* AmusementParkGenerator-Part1.app */,
+				C258AD4321C86AF80054E306 /* AmusementParkGeneratorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +94,15 @@
 				C249FA4421C7F83700240F6F /* Swipe.swift */,
 			);
 			path = "AmusementParkGenerator-Part1";
+			sourceTree = "<group>";
+		};
+		C258AD4421C86AF80054E306 /* AmusementParkGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				C258AD4521C86AF80054E306 /* AmusementParkGeneratorTests.swift */,
+				C258AD4721C86AF80054E306 /* Info.plist */,
+			);
+			path = AmusementParkGeneratorTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,6 +125,24 @@
 			productReference = C249FA2B21C7F7DB00240F6F /* AmusementParkGenerator-Part1.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C258AD4221C86AF80054E306 /* AmusementParkGeneratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C258AD4C21C86AF80054E306 /* Build configuration list for PBXNativeTarget "AmusementParkGeneratorTests" */;
+			buildPhases = (
+				C258AD3F21C86AF80054E306 /* Sources */,
+				C258AD4021C86AF80054E306 /* Frameworks */,
+				C258AD4121C86AF80054E306 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C258AD4921C86AF80054E306 /* PBXTargetDependency */,
+			);
+			name = AmusementParkGeneratorTests;
+			productName = AmusementParkGeneratorTests;
+			productReference = C258AD4321C86AF80054E306 /* AmusementParkGeneratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -105,6 +155,10 @@
 				TargetAttributes = {
 					C249FA2A21C7F7DB00240F6F = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					C258AD4221C86AF80054E306 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = C249FA2A21C7F7DB00240F6F;
 					};
 				};
 			};
@@ -122,6 +176,7 @@
 			projectRoot = "";
 			targets = (
 				C249FA2A21C7F7DB00240F6F /* AmusementParkGenerator-Part1 */,
+				C258AD4221C86AF80054E306 /* AmusementParkGeneratorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -134,6 +189,13 @@
 				C249FA3921C7F7DD00240F6F /* LaunchScreen.storyboard in Resources */,
 				C249FA3621C7F7DD00240F6F /* Assets.xcassets in Resources */,
 				C249FA3421C7F7DB00240F6F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C258AD4121C86AF80054E306 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +214,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C258AD3F21C86AF80054E306 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C258AD4621C86AF80054E306 /* AmusementParkGeneratorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C258AD4921C86AF80054E306 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C249FA2A21C7F7DB00240F6F /* AmusementParkGenerator-Part1 */;
+			targetProxy = C258AD4821C86AF80054E306 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C249FA3221C7F7DB00240F6F /* Main.storyboard */ = {
@@ -326,6 +404,46 @@
 			};
 			name = Release;
 		};
+		C258AD4A21C86AF80054E306 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4EE7VTLTHK;
+				INFOPLIST_FILE = AmusementParkGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcelbusschers.AmusementParkGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AmusementParkGenerator-Part1.app/AmusementParkGenerator-Part1";
+			};
+			name = Debug;
+		};
+		C258AD4B21C86AF80054E306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4EE7VTLTHK;
+				INFOPLIST_FILE = AmusementParkGeneratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcelbusschers.AmusementParkGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AmusementParkGenerator-Part1.app/AmusementParkGenerator-Part1";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -343,6 +461,15 @@
 			buildConfigurations = (
 				C249FA3E21C7F7DD00240F6F /* Debug */,
 				C249FA3F21C7F7DD00240F6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C258AD4C21C86AF80054E306 /* Build configuration list for PBXNativeTarget "AmusementParkGeneratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C258AD4A21C86AF80054E306 /* Debug */,
+				C258AD4B21C86AF80054E306 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
