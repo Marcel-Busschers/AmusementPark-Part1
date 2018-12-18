@@ -36,7 +36,13 @@ class AmusementParkGeneratorTests: XCTestCase {
     }
     
     func testChildGuestInstance() {
-        // TODO: Run test for CHILD Instance
+        // test for CHILD Instance
+        let childGuest = GuestPass(forType: .ChildGuest, firstName: "Charlie", lastName: "Rose", streetAddress: nil, city: nil, state: nil, zipCode: nil, dateOfBirth: DateOfBirth("09/09/1999"))
+        
+        let guestPass = GeneratePass(with: childGuest)
+        
+        // Testing if pass wasn't generated: Birthday makes entrant older than 5.
+        XCTAssertNil(guestPass.entrant)
     }
     
     func testFoodServiceEmployeeInstance() {

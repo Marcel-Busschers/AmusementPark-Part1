@@ -13,7 +13,6 @@ enum AmusementParkError: Error {
     case MissingFullName
     case MissingFullAddress
     case NotAChild
-    case IncorrectBirthdayFormat // TODO: BDAY Format
 }
 
 extension HourlyEmployee {

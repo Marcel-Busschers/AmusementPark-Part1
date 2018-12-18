@@ -49,7 +49,7 @@ struct DateOfBirth {
     let date: Date?
     
     /// Creates a date that takes in Int Values
-    init(day: Int?, month: Int?, year: Int?) throws {
+    init(day: Int?, month: Int?, year: Int?) {
         var dateComponent = DateComponents()
         
         dateComponent.year = year
@@ -60,14 +60,14 @@ struct DateOfBirth {
     }
     
     /// Creates a date in format of a string MM/DD/YYYY
-    init(_ stringDate: String) throws {
+    init(_ stringDate: String) {
         let splitStringDate = stringDate.split(separator: "/")
         
         let month = Int(splitStringDate[0])
         let day = Int(splitStringDate[1])
         let year = Int(splitStringDate[2])
         
-        try self.init(day: day, month: month, year: year)
+        self.init(day: day, month: month, year: year)
     }
 }
 
