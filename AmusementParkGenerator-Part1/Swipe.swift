@@ -9,7 +9,10 @@
 import Foundation
 
 /// Checks to see if the passed in entrant has access to a specific area type passed in
-func SwipeAreaAccess(for entrant: Entrant, testing typeArea: AreaAccess) -> Bool {
+func SwipeAreaAccess(for pass: Pass, testing typeArea: AreaAccess) -> Bool {
+    guard let entrant = pass.entrant else {
+        return false
+    }
     if entrant.areaAccess.contains(typeArea) {
         return true
     }
@@ -17,7 +20,10 @@ func SwipeAreaAccess(for entrant: Entrant, testing typeArea: AreaAccess) -> Bool
 }
 
 /// Checks to see if the passed in entrant has access to the rides
-func SwipeRideAccess(for entrant: Entrant) -> Bool {
+func SwipeRideAccess(for pass: Pass) -> Bool {
+    guard let entrant = pass.entrant else {
+        return false
+    }
     if entrant.rideAccess.contains(.AllRides) {
         return true
     }
@@ -25,9 +31,9 @@ func SwipeRideAccess(for entrant: Entrant) -> Bool {
 }
 
 /// Checks to see if the passed in entrant has access to a specific discount type passed in
-func SwipeDiscountAccess(for entrant: Entrant, testing typeDiscount: DiscountAccess) -> Bool {
+func SwipeDiscountAccess(for pass: Pass, testing typeDiscount: DiscountAccess) -> Bool {
     //Must first unwrap optional discountArray within the entrant
-    guard let discountArray = entrant.discountAccess else {
+    guard let entrant = pass.entrant, let discountArray = entrant.discountAccess else {
         return false
     }
     if discountArray.isEmpty {

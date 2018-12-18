@@ -13,6 +13,7 @@ enum AmusementParkError: Error {
     case MissingFullName
     case MissingFullAddress
     case NotAChild
+    case IncorrectBirthdayFormat // TODO: BDAY Format
 }
 
 extension HourlyEmployee {
@@ -21,17 +22,17 @@ extension HourlyEmployee {
     
     //Helper method to throw errors
     func checkErrors(for entrant: Entrant) throws {
-        if entrant.firstName == "" || entrant.lastName == "" {
+        if entrant.firstName == nil || entrant.lastName == nil {
             throw AmusementParkError.MissingFullName
         }
-        if entrant.streetAddress == "" || entrant.city == "" || entrant.state == "" || entrant.zipCode == "" {
+        if entrant.streetAddress == nil || entrant.city == nil || entrant.state == nil || entrant.zipCode == nil {
             throw AmusementParkError.MissingFullAddress
         }
     }
     
-    func isErrorFree(for entrant: Entrant) -> Bool {
+    func isErrorFree() -> Bool {
         do {
-            try checkErrors(for: entrant)
+            try checkErrors(for: self)
         } catch AmusementParkError.MissingFullName {
             print("Missing full name")
             return false
@@ -60,14 +61,45 @@ extension ChildGuest {
         }
     }
     
-    func isErrorFree(for entrant: ChildGuest) -> Bool {
+    func isErrorFree() -> Bool {
         do {
-            try checkErrors(for: entrant)
+            try checkErrors(for: self)
         } catch AmusementParkError.MissingBirthday {
             print("You need to enter a the child's birtday")
             return false
         } catch AmusementParkError.NotAChild {
             print("")
+            return false
+        } catch let error {
+            print("\(error)")
+            return false
+        }
+        return true
+    }
+}
+
+extension Manager {
+    // - Missing full name
+    // - Missing full address
+    
+    //Helper method to throw errors
+    func checkErrors(for entrant: Manager) throws {
+        if entrant.firstName == nil || entrant.lastName == nil {
+            throw AmusementParkError.MissingFullName
+        }
+        if entrant.streetAddress == nil || entrant.city == nil || entrant.state == nil || entrant.zipCode == nil {
+            throw AmusementParkError.MissingFullAddress
+        }
+    }
+    
+    func isErrorFree() -> Bool {
+        do {
+            try checkErrors(for: self)
+        } catch AmusementParkError.MissingFullName {
+            print("Missing manager's full name")
+            return false
+        } catch AmusementParkError.MissingFullAddress {
+            print("Missing full address, please enter all details within address")
             return false
         } catch let error {
             print("\(error)")

@@ -134,7 +134,7 @@ class ClassicGuest: Entrant {
 
 class ChildGuest: Entrant, Child {
     
-    init(dateOfBirth: DateOfBirth, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?) {
+    init(dateOfBirth: DateOfBirth?, firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?) {
         
         super.init(typeOfEntrant: .ChildGuest, areaAccess: [.AmusementAreas], rideAccess: [.AllRides], discountAccess: nil, firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, dateOfBirth: dateOfBirth)
     }
@@ -170,7 +170,7 @@ class VipGuest: Entrant {
 
 class HourlyEmployee: Entrant {
     
-    init(firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: String, dateOfBirth: DateOfBirth?) {
+    init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, dateOfBirth: DateOfBirth?) {
         
         let foodDiscount = Discount(typeOfDiscount: .Food, percentage: 15)
         let merchandiseDiscount = Discount(typeOfDiscount: .Merchandise, percentage: 25)
@@ -182,7 +182,7 @@ class HourlyEmployee: Entrant {
 // MARK: Sub Classes of all Employees
 
 class FoodServiceEmployee: HourlyEmployee {
-    override init(firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: String, dateOfBirth: DateOfBirth?) {
+    override init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, dateOfBirth: DateOfBirth?) {
         super.init(firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, dateOfBirth: dateOfBirth)
         
         self.typeOfEntrant = .FoodServicesEmployee
@@ -191,7 +191,7 @@ class FoodServiceEmployee: HourlyEmployee {
 }
 
 class RideServiceEmployee: HourlyEmployee {
-    override init(firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: String, dateOfBirth: DateOfBirth?) {
+    override init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, dateOfBirth: DateOfBirth?) {
         super.init(firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, dateOfBirth: dateOfBirth)
         
         self.typeOfEntrant = .RideSerivesEmployee
@@ -200,7 +200,7 @@ class RideServiceEmployee: HourlyEmployee {
 }
 
 class MaintenanceEmployee: HourlyEmployee {
-    override init(firstName: String, lastName: String, streetAddress: String, city: String, state: String, zipCode: String, dateOfBirth: DateOfBirth?) {
+    override init(firstName: String?, lastName: String?, streetAddress: String?, city: String?, state: String?, zipCode: String?, dateOfBirth: DateOfBirth?) {
         super.init(firstName: firstName, lastName: lastName, streetAddress: streetAddress, city: city, state: state, zipCode: zipCode, dateOfBirth: dateOfBirth)
         
         self.typeOfEntrant = .MaintenanceEmployee
